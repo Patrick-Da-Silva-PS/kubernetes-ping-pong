@@ -16,8 +16,8 @@ import { PLAYER_ID } from "src/constants"
  * @description Function called to run the entire application.
  */
 const bootstrap = async () => {
-	const configService = new ConfigService()
 	const app = await NestFactory.create(AppModule)
+	const configService = app.get<ConfigService>(ConfigService)
 	const serverPort = Number(configService.get<string>("SERVER_PORT"))
 
 	await app.listen(serverPort)
