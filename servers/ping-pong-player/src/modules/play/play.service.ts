@@ -2,6 +2,7 @@
 import { Injectable } from "@nestjs/common"
 
 // Global imports
+import { CONTAINER_ID } from "src/constants"
 
 // Local imports
 
@@ -10,6 +11,6 @@ import { Injectable } from "@nestjs/common"
 @Injectable()
 export class PlayService {
     play(): string {
-        return "Ready to rumble!"
+        return CONTAINER_ID
     }
 }

@@ -4,6 +4,7 @@ import { ConfigService } from "@nestjs/config"
 
 // Global imports
 import { AppModule } from "src/modules/app"
+import { CONTAINER_ID } from "src/constants"
 
 // Local imports
 
@@ -21,6 +22,7 @@ const bootstrap = async () => {
 
 	await app.listen(serverPort)
 	console.log(`*** App running on port ${serverPort} in ${process.env.NODE_ENV} ***`)
+	console.log("CONTAINER ID: ", CONTAINER_ID)
 }
 
 export default bootstrap
