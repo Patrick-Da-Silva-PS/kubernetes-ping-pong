@@ -1,2 +1,2 @@
 export { default as networkLoader } from "./network"
-export { default as playerIDLoader } from "./playerID"
+export { default as playerLoader } from "./player"

@@ -8,21 +8,21 @@ import { randomUUID } from "crypto"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-export interface PlayerIDConfig {
+export interface PlayerConfig {
     playerID: string
 }
 
 /**
- * @function playerIDLoader
+ * @function playerLoader
  * @category Config
  * @description Generates player-related configuration, including a unique identifier for this instance of a ping-pong player in the Kubernetes ping pong game.
  * @returns {PlayerIDConfig} The player-related configuration.
  */
-const playerIDLoader = registerAs<PlayerIDConfig>(
+const playerLoader = registerAs<PlayerConfig>(
     "player",
     () => ({
         playerID: randomUUID()
     })
 )
 
-export default playerIDLoader
+export default playerLoader

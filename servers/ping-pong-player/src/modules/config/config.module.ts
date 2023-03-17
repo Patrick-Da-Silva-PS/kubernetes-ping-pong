@@ -5,7 +5,7 @@ import { ConfigModule as NestJSConfigModule } from "@nestjs/config"
 // Global imports
 
 // Local imports
-import { networkLoader, playerIDLoader } from "./loaders"
+import { networkLoader, playerLoader } from "./loaders"
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -14,7 +14,7 @@ import { networkLoader, playerIDLoader } from "./loaders"
         NestJSConfigModule.forRoot({
             isGlobal: true,
             ignoreEnvFile: true,
-            load: [networkLoader, playerIDLoader],
+            load: [networkLoader, playerLoader],
         }),
     ],
     controllers: [],
