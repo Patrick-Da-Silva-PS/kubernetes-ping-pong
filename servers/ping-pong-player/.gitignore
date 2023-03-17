@@ -21,3 +21,7 @@ lerna-debug.log*
 # Tests
 /coverage
 /.nyc_output
+
+# Env. variables
+env_vars/**/*
+!env_vars/**/.gitkeep
