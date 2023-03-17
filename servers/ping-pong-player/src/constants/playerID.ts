@@ -7,6 +7,6 @@ import { randomUUID } from "crypto"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-const CONTAINER_ID = randomUUID()
+const PLAYER_ID = randomUUID()
 
-export default CONTAINER_ID
+export default PLAYER_ID

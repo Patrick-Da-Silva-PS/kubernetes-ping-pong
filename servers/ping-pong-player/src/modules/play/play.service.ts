@@ -1,8 +1,9 @@
 // Third-party imports
-import { Injectable } from "@nestjs/common"
+import { Injectable, Logger } from "@nestjs/common"
 
 // Global imports
-import { CONTAINER_ID } from "src/constants"
+import { PLAYER_ID } from "src/constants"
+import { nowTimestamp } from "src/utils"
 
 // Local imports
 
@@ -10,7 +11,10 @@ import { CONTAINER_ID } from "src/constants"
 
 @Injectable()
 export class PlayService {
+    private readonly logger = new Logger(PlayService.name)
+
     play(): string {
-        return CONTAINER_ID
+        this.logger.verbose(`Ping: ${nowTimestamp()}`)
+        return PLAYER_ID
     }
 }
