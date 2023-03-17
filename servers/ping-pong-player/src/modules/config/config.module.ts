@@ -5,6 +5,7 @@ import { ConfigModule as NestJSConfigModule } from "@nestjs/config"
 // Global imports
 
 // Local imports
+import { networkLoader, playerIDLoader } from "./loaders"
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -12,7 +13,8 @@ import { ConfigModule as NestJSConfigModule } from "@nestjs/config"
     imports: [
         NestJSConfigModule.forRoot({
             isGlobal: true,
-            envFilePath: [`env_vars/${process.env.NODE_ENV}/network.env`],
+            ignoreEnvFile: true,
+            load: [networkLoader, playerIDLoader],
         }),
     ],
     controllers: [],
