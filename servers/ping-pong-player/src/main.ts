@@ -1,16 +1,10 @@
 // Third-party imports
-import { NestFactory } from "@nestjs/core"
 
 // Global imports
-import { AppModule } from "src/modules/app"
 
 // Local imports
+import bootstrap from "./bootstrap"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-
-async function bootstrap() {
-	const app = await NestFactory.create(AppModule)
-	await app.listen(3000)
-}
 bootstrap()
