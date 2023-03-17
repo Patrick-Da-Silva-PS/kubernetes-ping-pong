@@ -8,13 +8,17 @@ import { randomUUID } from "crypto"
 
 ////////////////////////////////////////////////////////////////////////////////
 
+export interface PlayerIDConfig {
+    playerID: string
+}
+
 /**
  * @function playerIDLoader
  * @category Config
- * @description Generates a unique identifier for this instance of a ping-pong player in the Kubernetes ping pong game.
- * @returns {string} A unique string identifier for the server.
+ * @description Generates player-related configuration, including a unique identifier for this instance of a ping-pong player in the Kubernetes ping pong game.
+ * @returns {PlayerIDConfig} The player-related configuration.
  */
-const playerIDLoader = registerAs(
+const playerIDLoader = registerAs<PlayerIDConfig>(
     "player",
     () => ({
         playerID: randomUUID()

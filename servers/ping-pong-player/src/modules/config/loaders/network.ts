@@ -1,11 +1,15 @@
 // Third-party imports
-import { registerAs } from "@nestjs/config"
 
 // Global imports
 
 // Local imports
+import yamlLoader from './yaml'
 
 ////////////////////////////////////////////////////////////////////////////////
+
+export interface NetworkConfig {
+    server_port: number
+}
 
 /**
  * @function networkLoader
@@ -13,11 +17,6 @@ import { registerAs } from "@nestjs/config"
  * @description Loads networking-related configuration.
  * @returns Networking configuration.
  */
-const networkLoader = registerAs(
-    "network",
-    () => ({
-        server_port: 3456
-    })
-)
+const networkLoader = yamlLoader<NetworkConfig>("network")
 
 export default networkLoader
