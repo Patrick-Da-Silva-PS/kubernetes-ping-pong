@@ -1,6 +1,13 @@
+// Third-party imports
 import { Test, TestingModule } from "@nestjs/testing"
+
+// Global imports
+
+// Local imports
 import { AppController } from "./app.controller"
 import { AppService } from "./app.service"
+
+////////////////////////////////////////////////////////////////////////////////
 
 describe("AppController", () => {
 	let appController: AppController
