@@ -7,14 +7,10 @@ import { HealthModule } from "src/modules/health"
 import { PlayModule } from "src/modules/play"
 
 // Local imports
-import { AppController } from "./app.controller"
-import { AppService } from "./app.service"
 
 ////////////////////////////////////////////////////////////////////////////////
 
 @Module({
-	imports: [ConfigModule, HealthModule, PlayModule],
-	controllers: [AppController],
-	providers: [AppService],
+	imports: [ConfigModule, HealthModule, PlayModule]
 })
 export class AppModule { }
