@@ -1,0 +1,13 @@
+.vscode
+dist
+docker
+.dockerignore
+env_vars/network/development.yaml
+node_modules
+src/**/__tests__
+src/**/__mocks__
+.gitignore
+.prettierrc
+Makefile
+nest-cli.json
+README.md
