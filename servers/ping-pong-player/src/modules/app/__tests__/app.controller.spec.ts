@@ -55,4 +55,17 @@ describe("AppController (e2e)", () => {
 			expect(response.body).toEqual(config)
 		})
 	})
+
+
+	describe("/play (GET)", () => {
+		it("should return the player ID", async () => {
+			const response = await request(app.getHttpServer())
+				.get("/play")
+				.expect(200)
+
+			const config = loadedConfigService.getInstanceConfig()
+
+			expect(response.text).toEqual(deepGet(config, "player.playerID"))
+		})
+	})
 })

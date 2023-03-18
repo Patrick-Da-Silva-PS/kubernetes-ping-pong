@@ -14,7 +14,7 @@ export class PlayController {
     constructor(private readonly playService: PlayService) { }
 
     @Get()
-    play(): any {
+    play() {
         return this.playService.play()
     }
 }
