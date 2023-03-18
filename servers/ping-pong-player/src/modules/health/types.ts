@@ -1,0 +1,11 @@
+// Third-party imports
+
+// Global imports
+
+// Local imports
+
+////////////////////////////////////////////////////////////////////////////////
+
+export interface Health {
+    status: number
+}

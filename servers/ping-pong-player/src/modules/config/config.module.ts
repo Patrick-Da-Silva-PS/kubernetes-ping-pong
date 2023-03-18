@@ -5,6 +5,8 @@ import { ConfigModule as NestJSConfigModule } from "@nestjs/config"
 // Global imports
 
 // Local imports
+import { LoadedConfigService } from "./config.service"
+import { ConfigController } from "./config.controller"
 import { networkLoader, playerLoader } from "./loaders"
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -17,7 +19,7 @@ import { networkLoader, playerLoader } from "./loaders"
             load: [networkLoader, playerLoader],
         }),
     ],
-    controllers: [],
-    providers: [],
+    controllers: [ConfigController],
+    providers: [LoadedConfigService],
 })
 export class ConfigModule { }
