@@ -2,22 +2,14 @@
 import { Test } from "@nestjs/testing"
 
 // Global imports
+import { LoadedConfigServiceMock, mockedConfig } from "../__mocks__"
+
 
 // Local imports
 import { ConfigController } from "../config.controller"
 import { LoadedConfigService } from "../config.service"
-import type { ConfigType } from "../types"
 
 ////////////////////////////////////////////////////////////////////////////////
-
-const mockedConfig: ConfigType = {
-    network: {
-        server_port: 1234
-    },
-    player: {
-        playerID: "MyRandomPlayerID"
-    }
-}
 
 describe("ConfigController", () => {
     let configController: ConfigController
@@ -28,7 +20,7 @@ describe("ConfigController", () => {
         })
             .useMocker((token) => {
                 if (token === LoadedConfigService) {
-                    return { getInstanceConfig: jest.fn().mockReturnValue(mockedConfig) }
+                    return LoadedConfigServiceMock
                 }
             })
             .compile()

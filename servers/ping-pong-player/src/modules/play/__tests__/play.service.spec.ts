@@ -4,21 +4,12 @@ import { ConfigService } from "@nestjs/config"
 import { get as deepGet } from "lodash"
 
 // Global imports
-import type { ConfigType } from "src/modules/config"
+import { NestJSConfigServiceMock, mockedConfig } from "src/modules/config/__mocks__"
 
 // Local imports
 import { PlayService } from "../play.service"
 
 ////////////////////////////////////////////////////////////////////////////////
-
-const mockedConfig: ConfigType = {
-    network: {
-        server_port: 1234
-    },
-    player: {
-        playerID: "MyRandomPlayerID"
-    }
-}
 
 describe("PlayService", () => {
     let playService: PlayService
@@ -29,13 +20,7 @@ describe("PlayService", () => {
         })
             .useMocker((token) => {
                 if (token === ConfigService) {
-                    return {
-                        get: (
-                            jest
-                                .fn()
-                                .mockImplementation((key: string) => deepGet(mockedConfig, key))
-                        )
-                    }
+                    return NestJSConfigServiceMock
                 }
             })
             .compile()
