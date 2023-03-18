@@ -1,5 +1,4 @@
 .vscode
-.yarn
 dist
 docker
 .dockerignore
@@ -9,7 +8,6 @@ src/**/__tests__
 src/**/__mocks__
 .gitignore
 .prettierrc
-.yarnrc.yml
 Makefile
 nest-cli.json
 README.md
