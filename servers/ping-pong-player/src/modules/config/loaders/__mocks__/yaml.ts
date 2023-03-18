@@ -4,7 +4,7 @@ import { registerAs } from '@nestjs/config'
 // Global imports
 
 // Local imports
-import { mockedConfig } from '../../__mocks__'
+import { mockedConfig } from '../../__mocks__/configService.mock'
 
 ////////////////////////////////////////////////////////////////////////////////
 

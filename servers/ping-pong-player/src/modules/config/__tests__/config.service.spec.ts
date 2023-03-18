@@ -3,7 +3,7 @@ import { Test } from "@nestjs/testing"
 import { ConfigService } from "@nestjs/config"
 
 // Global imports
-import { NestJSConfigServiceMock, mockedConfig } from "../__mocks__"
+import NestJSConfigServiceMock, { mockedConfig } from "../__mocks__/configService.mock"
 
 // Local imports
 import { LoadedConfigService } from "../config.service"

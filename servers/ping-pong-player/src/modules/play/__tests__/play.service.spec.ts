@@ -4,7 +4,7 @@ import { ConfigService } from "@nestjs/config"
 import { get as deepGet } from "lodash"
 
 // Global imports
-import { NestJSConfigServiceMock, mockedConfig } from "src/modules/config/__mocks__"
+import NestJSConfigServiceMock, { mockedConfig } from "src/modules/config/__mocks__/configService.mock"
 
 // Local imports
 import { PlayService } from "../play.service"
