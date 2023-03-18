@@ -3,8 +3,7 @@ import { Injectable, Logger } from "@nestjs/common"
 import { ConfigService } from "@nestjs/config"
 
 // Global imports
-// import { nowTimestamp } from "src/utils"
-import { nowTimestamp } from "../../utils"
+import { nowTimestamp } from "src/utils"
 
 // Local imports
 
