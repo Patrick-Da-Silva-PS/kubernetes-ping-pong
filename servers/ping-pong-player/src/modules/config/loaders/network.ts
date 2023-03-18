@@ -3,13 +3,10 @@
 // Global imports
 
 // Local imports
-import yamlLoader from './yaml'
+import yamlConfigLoader from './yaml'
+import type { NetworkConfig } from './types'
 
 ////////////////////////////////////////////////////////////////////////////////
-
-export interface NetworkConfig {
-    server_port: number
-}
 
 /**
  * @function networkLoader
@@ -17,6 +14,6 @@ export interface NetworkConfig {
  * @description Loads networking-related configuration.
  * @returns Networking configuration.
  */
-const networkLoader = yamlLoader<NetworkConfig>("network")
+const networkLoader = yamlConfigLoader<NetworkConfig>("network")
 
 export default networkLoader

@@ -5,12 +5,9 @@ import { randomUUID } from "crypto"
 // Global imports
 
 // Local imports
+import type { PlayerConfig } from './types'
 
 ////////////////////////////////////////////////////////////////////////////////
-
-export interface PlayerConfig {
-    playerID: string
-}
 
 /**
  * @function playerLoader

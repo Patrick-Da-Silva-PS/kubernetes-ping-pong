@@ -22,10 +22,11 @@ const yamlConfigLoader = <ConfigType,>(label: string): ReturnType<typeof registe
     label,
     () => {
         const loadedConfiguration = yaml.load(
-            readFileSync(join(...YAML_CONFIG_FILENAME(label)), 'utf8'),
+            readFileSync(
+                join(...YAML_CONFIG_FILENAME(label)),
+                'utf8'
+            ),
         ) as ConfigType
-
-        console.log("CONFIG", loadedConfiguration)
 
         return loadedConfiguration
     }
