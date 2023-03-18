@@ -4,6 +4,7 @@ import { ConfigService } from "@nestjs/config"
 
 // Global imports
 import { AppModule } from "src/modules/app"
+import { Logger } from "@nestjs/common"
 
 // Local imports
 
@@ -18,10 +19,12 @@ const bootstrap = async () => {
 	const app = await NestFactory.create(AppModule)
 	const configService = app.get<ConfigService>(ConfigService)
 	const serverPort = configService.get<number>("network.server_port")
+	const playerID = configService.get<string>("player.playerID")
+	const logger = new Logger()
 
 	await app.listen(serverPort)
-	console.log(`*** App running on port ${serverPort} in ${process.env.NODE_ENV} ***`)
-	console.log("CONTAINER ID: ", configService.get<string>("player.playerID"))
+	logger.debug(`*** App running on port ${serverPort} in ${process.env.NODE_ENV} ***`)
+	logger.debug(`Player ID: ${playerID}`)
 }
 
 export default bootstrap
