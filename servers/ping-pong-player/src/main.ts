@@ -1,0 +1,10 @@
+// Third-party imports
+
+// Global imports
+
+// Local imports
+import bootstrap from "./bootstrap"
+
+////////////////////////////////////////////////////////////////////////////////
+
+bootstrap()
