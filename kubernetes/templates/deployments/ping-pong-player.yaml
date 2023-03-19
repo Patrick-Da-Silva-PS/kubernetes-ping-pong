@@ -15,7 +15,7 @@ spec:
                 type: ping-pong-player
         spec:
             containers:
-            -   image: docker.io/patrickdasilva/ping-pong-player:latest
+            -   image: docker.io/patrickdasilva/ping-pong-player:0.0.2
                 name: ping-pong-player
                 volumeMounts:
                     -   name: environment

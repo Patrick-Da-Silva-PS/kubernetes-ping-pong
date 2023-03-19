@@ -71,3 +71,31 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+## DockerHub
+
+- To update the image, follow this process:
+  * First update the version number in the Makefile.
+
+  * Build the docker image:
+  ```bash
+    make build_docker_image
+  ```
+  
+  * Even if the image you want to push is tagged in your local registry, you need to create a tag that is associated to the remote registry. So use the `docker tag` command for this:
+  ```bash
+    docker tag <image-name>:<version-number> <repository-name>/<image-name>:<version-number>
+  ```
+  Keep the same image name and version number for consistency, both in the local and remote registry.
+
+  * Now that there is a reference to the remote registry, we can push to it. First make sure you are logged in to your remote registry:*
+  ```bash
+    docker login
+  ```
+
+  * Then push the image:
+  ```bash
+    docker push <repository-name>/<image-name>:<version-number>
+  ```
+
+  * Make sure to update the image used in the Kubernetes cluster (assuming it's going to be used next).
