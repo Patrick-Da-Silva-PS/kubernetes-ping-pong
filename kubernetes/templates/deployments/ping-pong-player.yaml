@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: ping-pong-player
+    labels:
+        type: ping-pong-player
+spec:
+    replicas: 5
+    selector:
+        matchLabels:
+            type: ping-pong-player
+    template:
+        metadata:
+            labels:
+                type: ping-pong-player
+        spec:
+            containers:
+            -   image: docker.io/patrickdasilva/ping-pong-player:0.0.2
+                name: ping-pong-player
+                volumeMounts:
+                    -   name: environment
+                        mountPath: /usr/app/env_vars/production/network.yaml
+                        subPath: network.yaml
+            volumes:
+                -   name: environment
+                    configMap:
+                        name: ping-pong-player
+                    

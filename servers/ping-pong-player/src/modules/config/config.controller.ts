@@ -1,5 +1,5 @@
 // Third-party imports
-import { Controller, Get } from "@nestjs/common"
+import { Controller, Get, Header } from "@nestjs/common"
 
 // Global imports
 
@@ -13,7 +13,9 @@ export class ConfigController {
     constructor(private readonly loadedConfigService: LoadedConfigService) { }
 
     @Get()
+    @Header("Connection", "close")
     config() {
         return this.loadedConfigService.getInstanceConfig()
     }
 }
+

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ping-pong-player
+data:
+  network.yaml: |
+    server_port: 3456
