@@ -2,7 +2,7 @@
 dist
 docker
 .dockerignore
-env_vars/network/development.yaml
+env_vars
 node_modules
 src/**/__tests__
 src/**/__mocks__
