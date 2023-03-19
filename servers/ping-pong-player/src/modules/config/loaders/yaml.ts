@@ -10,7 +10,7 @@ import { join } from 'path';
 
 ////////////////////////////////////////////////////////////////////////////////
 
-const YAML_CONFIG_FILENAME = (label: string) => [process.cwd(), "env_vars", label, `${process.env.NODE_ENV}.yaml`]
+const YAML_CONFIG_FILENAME = (label: string) => [process.cwd(), "env_vars", process.env.NODE_ENV, `${label}.yaml`]
 
 /**
  * @function yamlConfigLoader

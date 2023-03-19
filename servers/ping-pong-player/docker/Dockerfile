@@ -16,9 +16,10 @@ RUN yarn build
 # Production
 FROM node:16-alpine AS production
 
-COPY --from=builder /usr/src/app/node_modules ./node_modules
-COPY --from=builder /usr/src/app/dist ./dist
-COPY --from=builder /usr/src/app/env_vars ./env_vars
+COPY --from=builder /usr/src/app/node_modules /usr/app/node_modules
+COPY --from=builder /usr/src/app/dist /usr/app/dist
+
+WORKDIR /usr/app
 
 ENV NODE_ENV production
 
