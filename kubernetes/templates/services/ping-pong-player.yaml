@@ -8,6 +8,8 @@ spec:
   selector:
     type: ping-pong-player
   ports:
-  - port: 3456
+  - port: 80
     protocol: TCP
     targetPort: 3456
+    nodePort: 32001
+  type: NodePort
