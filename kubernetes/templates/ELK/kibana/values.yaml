@@ -136,14 +136,14 @@ service:
   httpPortName: http
 
 ingress:
-  enabled: false
+  enabled: true
   className: "nginx"
   pathtype: ImplementationSpecific
-  annotations: {}
-  # kubernetes.io/ingress.class: nginx
+  annotations: 
+    kubernetes.io/ingress.class: nginx
   # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: kibana-example.local
+    - host: kubernetes.docker.internal
       paths:
         - path: /
   #tls: []
